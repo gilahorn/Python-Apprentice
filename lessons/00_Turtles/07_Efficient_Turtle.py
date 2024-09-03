@@ -10,29 +10,43 @@ can draw a square, pentagon, and hexagon with a single function
 import turtle                           # Tell Python we want to work with the turtle
 turtle.setup (width=600, height=600)    # Set the size of the window
 
-tina = turtle.Turtle()                  # Create a turtle named tina
+george = turtle.Turtle()                  # Create a turtle named tina
 
-tina.shape('turtle')                    # Set the shape of the turtle to a turtle
-tina.speed(2)                           # Make the turtle move as fast, but not too fast. 
+george.shape('turtle')                    # Set the shape of the turtle to a turtle
+george.speed(2)                           # Make the turtle move as fast, but not too fast. 
 
 def draw_polygon(sides):
 
-    angle = ... # Calculate angle from number of sides
+    angle = 360/sides 
+    side_length =50      # Calculate angle from number of sides
     
-    for i in range(...):                 # Loop through the number of sides
-        ...                              # Move tina forward by the forward distance
+    for i in range(sides):                 # Loop through the number of sides
+        george.forward(side_length)
+        george.left(angle)   
+                                # Move tina forward by the forward distance
         ...                              # Turn tina left by the left turn
 
+george.penup()
+george.goto(40,0)
+george.pendown()
 
-draw_polygon(...)                        # Draw a square
+draw_polygon(4)                        # Draw a square
 
-...                                      # Move tina to another spot on the screen
+george.penup()
+george.goto(-50,0)
+george.pendown()
+                                      # Move tina to another spot on the screen
 
-draw_polygon(...)                        # Draw a pentagon
+draw_polygon(5)                        # Draw a pentagon
 
-...                                      # Move tina to another spot on the screen
+george.penup()
+george.goto(-150,0)
+george.pendown()                                      # Move tina to another spot on the screen
 
-draw_polygon(...)                        # Draw a hexagon
+draw_polygon(6)                        # Draw a hexagon
 
+george.penup()
+george.goto(-500,0)
+george.pendown() 
 
 turtle.exitonclick()                     # Close the window when we click on it
